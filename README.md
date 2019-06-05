@@ -8,5 +8,12 @@ This is the repo for 2277777788888899, the tool that searches to and fro for num
 
 ## Installation and execution
 
+```bash
+https://github.com/TrainFanatic/2277777788888899 ~/Desktop/2277777788888899
+cd ~/Desktop/2277777788888899/sh
+./linesplitter
+```
 
+## Troubleshooting
 
+Read TROUBLESHOOTING.md for troubleshooting
