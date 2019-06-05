@@ -1,6 +1,6 @@
 # 2277777788888899
 
-> Today, we are doing the number two-two, seven-seven-seven-seven-seven-seven, eight-eight-eight-eight-eight-eight, nine-nine.
+> Today, we are doing the number: two-two, seven-seven-seven-seven-seven-seven, eight-eight-eight-eight-eight-eight, nine-nine.
 
 ~Matt Parker
 
