@@ -1,0 +1,38 @@
+#!/bin/bash
+if [ $2 ]
+then
+times=$2
+else
+times=0
+fi
+i=0 #Variable for while loop in the end
+length=$(echo -n $1 | wc -m | tr " " "\0") #use -n to avoid newline being counted
+if [ $length -eq 1 ]
+then
+echo $times "LAYERS/POINTS"
+exit
+fi
+udlength=$(echo $length"-1" | bc)
+countedcharacterplace=0
+ccp=1
+while [ $countedcharacterplace -le $udlength ] #use udlenngth because countedcharacterplace starts at 0. Also, avoid bugs.
+do
+char[$countedcharacterplace]=$(echo -n $1 | head -c $ccp | tail -c 1)
+countedcharacterplace=$(echo $countedcharacterplace"+1" | bc)
+ccp=$(echo $ccp"+1"| bc)
+done
+lastnum=1
+while [ $i -le $udlength ] #use while because 'for' loop below does not work
+do
+
+mult=$(echo ${char[$i]}"*"$lastnum | bc)
+lastnum=$mult
+i=$(echo $i"+1" | bc)
+done
+#for i in {0..$udlength}
+#do
+#echo ${char[$i]}
+#done
+times=$(echo $times"+1" | bc)
+echo $mult
+./linesplitter $mult $times
