@@ -1,0 +1,62 @@
+ALGORITHM FOR FINDING FACTORS OF A NUMBER
+Proposed Solution #1 by C.G
+
+Get a list of all numbers from 1 and the number you want to factor (which will will call g)
+For every number, split the list of numbers (1 to g) into that number amount of columns
+
+LEGEND:
+g: number you want to factor
+n: the number that is being factorised
+For Example:
+1                                                   1 2
+2                                                   3 4
+3                                                   5 6 >Factoring g and seeing if 2 is a factor of g
+4                                                   7 8
+5  >Factoring 10 and seeing if 1 is a factor of 10. 9 10
+6                                                   ..g
+7
+8
+9
+10
+
+If the number (n) is divisible by g, then continue on by incrementing n by 1 and then splitting the list into n columns
+For Example:
+1  2  3  4  5                   1  2  3  4   5   6
+6  7  8  9  10     >BECOMES>    7  8  9  10  11  12
+11 12 13 14 15                  13 14 15
+
+However, if n is NOT divisible by g, put a marker (that makes sure that the computer knows it in indivisible by g) in every element of the last column
+Make the marker 'm'
+For Example:
+1 2 3             1 2 3m             1  2  3m  4
+4 5 6 > BECOMES > 4 5 6m > BECOMES > 5  6m  7  8
+7 8 9             7 8 9m             9m 10
+10                10
+
+Now, the computer knows which number NOT to put in the list.
+
+This will continue until the number of columns is equal to g. Once that happens, replace every divider (in this case it was a space seperating the columns) with newlines.
+For Example:
+
+1 2m 3 4m 5 6m 7m 8m 9m 10m 11m 12m 13m 14m 15 > BECOMES > 1
+                                                           2m
+                                                           3
+                                                           4m
+                                                           5
+                                                           6m
+                                                           7m
+                                                           8m
+                                                           9m
+                                                           10m
+                                                           11m
+                                                           12m
+                                                           13m
+                                                           14m
+                                                           15
+
+Which can be done using the command tr ' ' '\n'
+The computer will delete all lines with 'm' in it which can be done by doing sed '/m/d'
+This deletes all lines with 'm' in it.
+
+OPTIONAL:
+Make the program search for factors less than (g/2) + 1

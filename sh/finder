@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ ! $1 ] #checks if 1st argument is present
+then
+cat << eol
+FACTOR FINDER HELP
+syntax: ./`basename $0` [-h] n̲u̲m̲b̲e̲r̲ [f̲i̲l̲e̲]
+This program will find factors of n̲u̲m̲b̲e̲r̲ and output results to f̲i̲l̲e̲
+eol
+exit
+fi
+if [ $2 ]
+then
+file=$2
+else
+file=./factors
+fi
+for i in $(seq -f %f 1 1 $1 | rev | cut -c8- | rev) #fastest but very CPU hungry, increments by 1 from 1 until reach $1. Cuts off .000000 (7 length) at end
+do
+if [ $(expr $1 % $i) -eq 0 ]
+then
+echo $i" is a factor of "$1 >> $file
+fi
+done
