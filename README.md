@@ -1,4 +1,4 @@
-# 2277777788888899
+# 277777788888899
 
 > Today, we are doing the number: two, seven-seven-seven-seven-seven-seven, eight-eight-eight-eight-eight-eight, nine-nine.
 
