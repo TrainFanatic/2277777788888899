@@ -14,10 +14,15 @@ file=$2
 else
 file=./factors
 fi
-for i in $(seq -f %f 1 1 $1 | rev | cut -c8- | rev) #fastest but very CPU hungry, increments by 1 from 1 until reach $1. Cuts off .000000 (7 length) at end
+i=1
+list=""
+for i in $(jot -  1 $(expr $1 / 2 + 1))
 do
-if [ $(expr $1 % $i) -eq 0 ]
+
+if [ $(echo $1 % $i | bc) -eq 0 ]
 then
-echo $i" is a factor of "$1 >> $file
+echo $i >> $file
 fi
+
 done
+echo "DONE.. CLOSING"

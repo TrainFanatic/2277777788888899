@@ -58,5 +58,18 @@ Which can be done using the command tr ' ' '\n'
 The computer will delete all lines with 'm' in it which can be done by doing sed '/m/d'
 This deletes all lines with 'm' in it.
 
+(NOT YET OPTIMIZED) METHOD:
+for i in $(jot - 1 $1) #For all values 1 to first value (the number 
+do
+n[$i]=$i #All values are mapped onto array n starting from one. N ∈ natural numbers(1 is stored in n[1], 2 in n[2] etc.)
+done
+while [ $i -le $1 ]
+do
+
+done
+
 OPTIONAL:
 Make the program search for factors less than (g/2) + 1
+
+REVISED VERSION 4 July 2019 (Happy Independence day, USA!)
+Instead of creating a list for which the 
