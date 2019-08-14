@@ -9,7 +9,7 @@ This is the repo for 277777788888899, the tool that searches to and fro for numb
 ## Installation and execution
 
 ```bash
-https://github.com/TrainFanatic/277777788888899 ~/Desktop/277777788888899
+git clone https://github.com/TrainFanatic/277777788888899 ~/Desktop/277777788888899
 cd ~/Desktop/277777788888899/sh
 ./linesplitter
 ```
@@ -17,3 +17,8 @@ cd ~/Desktop/277777788888899/sh
 ## Troubleshooting
 
 Read TROUBLESHOOTING.md for troubleshooting
+
+## Things to note
+
+I am an ordinary school student. I try to develop, but time is limited 🙂
+
